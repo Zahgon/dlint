@@ -18,45 +18,4 @@ class BadRequestsUseLinter(bad_kwarg_use.BadKwargUseLinter):
 
     @property
     def kwargs(self):
-        return [
-            {
-                "module_path": "requests.request",
-                "kwarg_name": "verify",
-                "predicate": tree.kwarg_false,
-            },
-            {
-                "module_path": "requests.get",
-                "kwarg_name": "verify",
-                "predicate": tree.kwarg_false,
-            },
-            {
-                "module_path": "requests.options",
-                "kwarg_name": "verify",
-                "predicate": tree.kwarg_false,
-            },
-            {
-                "module_path": "requests.head",
-                "kwarg_name": "verify",
-                "predicate": tree.kwarg_false,
-            },
-            {
-                "module_path": "requests.post",
-                "kwarg_name": "verify",
-                "predicate": tree.kwarg_false,
-            },
-            {
-                "module_path": "requests.put",
-                "kwarg_name": "verify",
-                "predicate": tree.kwarg_false,
-            },
-            {
-                "module_path": "requests.patch",
-                "kwarg_name": "verify",
-                "predicate": tree.kwarg_false,
-            },
-            {
-                "module_path": "requests.delete",
-                "kwarg_name": "verify",
-                "predicate": tree.kwarg_false,
-            },
-        ]
+        pass

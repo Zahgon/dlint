@@ -14,6 +14,4 @@ class BadCommandsUseLinter(bad_module_use.BadModuleUseLinter):
 
     @property
     def illegal_modules(self):
-        return [
-            "commands",
-        ]
+        pass

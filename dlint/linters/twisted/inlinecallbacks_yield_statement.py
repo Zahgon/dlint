@@ -18,27 +18,4 @@ class InlineCallbacksYieldStatementLinter(base.BaseLinter):
     _error_tmpl = 'DUO113 "inlineCallbacks" function missing "yield" statement'
 
     def visit_FunctionDef(self, node):
-        self.generic_visit(node)
-
-        if not tree.function_has_inlinecallbacks_decorator(node):
-            return
-
-        if tree.function_is_empty(node):
-            return
-
-        results = []
-
-        def yield_statement_callback(inner_node):
-            if isinstance(inner_node, ast.Yield):
-                results.append(inner_node)
-
-        tree.walk_callback_same_scope(node, yield_statement_callback)
-
-        if not results:
-            self.results.append(
-                base.Flake8Result(
-                    lineno=node.lineno,
-                    col_offset=node.col_offset,
-                    message=self._error_tmpl
-                )
-            )
+        pass

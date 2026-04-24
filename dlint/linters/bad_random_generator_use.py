@@ -22,39 +22,7 @@ class BadRandomGeneratorUseLinter(base.BaseLinter):
     _error_tmpl = 'DUO102 insecure use of "random" module, prefer "random.SystemRandom"'
 
     def visit_Attribute(self, node):
-        legal_module_functions = [
-            ('random', 'SystemRandom'),
-        ]
-
-        if (isinstance(node.value, ast.Name)):
-            illegal_function_use = any(
-                node.value.id == module and node.attr != function
-                for module, function in legal_module_functions
-            )
-
-            if illegal_function_use:
-                self.results.append(
-                    base.Flake8Result(
-                        lineno=node.lineno,
-                        col_offset=node.col_offset,
-                        message=self._error_tmpl
-                    )
-                )
+        pass
 
     def visit_ImportFrom(self, node):
-        legal_module_functions = [
-            ('random', 'SystemRandom'),
-        ]
-        illegal_import_from_use = any(
-            node.module == module and any(alias.name != function for alias in node.names)
-            for module, function in legal_module_functions
-        )
-
-        if illegal_import_from_use:
-            self.results.append(
-                base.Flake8Result(
-                    lineno=node.lineno,
-                    col_offset=node.col_offset,
-                    message=self._error_tmpl
-                )
-            )
+        pass

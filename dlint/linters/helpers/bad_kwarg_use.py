@@ -25,15 +25,7 @@ class BadKwargUseLinter(base.BaseLinter, abc.ABC):
         ]
 
         def minimized_illegal_module_imported(module_path, node):
-            return any(
-                self.namespace.illegal_module_imported(
-                    module_path,
-                    kwarg["module_path"]
-                )
-                and kwarg["predicate"](node, kwarg["kwarg_name"])
-                for illegal_module_path, kwargs in module_path_grouped
-                for kwarg in kwargs
-            )
+            pass
 
         kwarg_predicate_grouped = [
             (k, list(v))
@@ -44,15 +36,7 @@ class BadKwargUseLinter(base.BaseLinter, abc.ABC):
         ]
 
         def minimized_kwarg_predicate(module_path, node):
-            return any(
-                self.namespace.illegal_module_imported(
-                    module_path,
-                    kwarg["module_path"]
-                )
-                and kwarg["predicate"](node, kwarg["kwarg_name"])
-                for kwarg_predicate_tuple, kwargs in kwarg_predicate_grouped
-                for kwarg in kwargs
-            )
+            pass
 
         # Minimize kwarg checks by grouping similar rules
         if (len(kwarg_predicate_grouped) < len(self.kwargs)
@@ -83,21 +67,4 @@ class BadKwargUseLinter(base.BaseLinter, abc.ABC):
         """
 
     def visit_Call(self, node):
-        self.generic_visit(node)
-
-        if not isinstance(node.func, (ast.Attribute, ast.Name)):
-            return
-
-        bad_kwarg = self.minimized_bad_kwarg_func(
-            tree.module_path_str(node.func),
-            node
-        )
-
-        if bad_kwarg:
-            self.results.append(
-                base.Flake8Result(
-                    lineno=node.lineno,
-                    col_offset=node.col_offset,
-                    message=self._error_tmpl
-                )
-            )
+        pass

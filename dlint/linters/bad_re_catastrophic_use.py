@@ -22,25 +22,7 @@ class BadReCatastrophicUseLinter(bad_module_attribute_use.BadModuleAttributeUseL
 
     @property
     def illegal_module_attributes(self):
-        return {
-            're': [
-                'compile',
-                'search',
-                'match',
-                'fullmatch',
-                'split',
-                'findall',
-                'finditer',
-                'sub',
-                'subn',
-            ],
-            'django.core.validators': [
-                'RegexValidator',
-            ],
-            'django.urls': [
-                're_path',
-            ]
-        }
+        pass
 
     def __init__(self, *args, **kwargs):
         self.calls = {}
@@ -48,32 +30,7 @@ class BadReCatastrophicUseLinter(bad_module_attribute_use.BadModuleAttributeUseL
         super(BadReCatastrophicUseLinter, self).__init__(*args, **kwargs)
 
     def visit_Call(self, node):
-        self.generic_visit(node)
-
-        self.calls[node.func] = node
+        pass
 
     def get_results(self):
-        pattern_argument_number = 0
-
-        def pattern_is_catastrophic(node):
-            call = self.calls.get(node)
-            if call is None or not call.args:
-                return False
-
-            pattern = call.args[pattern_argument_number]
-
-            # Only handle string literals for now
-            if not (isinstance(pattern, ast.Constant) and isinstance(pattern.value, str)):
-                return False
-
-            return redos.detect.catastrophic(pattern.value)
-
-        return [
-            base.Flake8Result(
-                lineno=node.lineno,
-                col_offset=node.col_offset,
-                message=self._error_tmpl
-            )
-            for node in self.bad_nodes
-            if pattern_is_catastrophic(node)
-        ]
+        pass

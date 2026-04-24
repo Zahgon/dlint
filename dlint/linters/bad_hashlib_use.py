@@ -17,19 +17,4 @@ class BadHashlibUseLinter(bad_kwarg_use.BadKwargUseLinter):
 
     @property
     def kwargs(self):
-        def missing_or_true(call, kwarg_name):
-            return (
-                tree.kwarg_not_present(call, kwarg_name)
-                or tree.kwarg_true(call, kwarg_name)
-            )
-
-        bad_hash_algorithms = {"md5", "sha1"}
-
-        return [
-            {
-                "module_path": f"hashlib.{hash_algorithm}",
-                "kwarg_name": "usedforsecurity",
-                "predicate": missing_or_true,
-            }
-            for hash_algorithm in bad_hash_algorithms
-        ]
+        pass

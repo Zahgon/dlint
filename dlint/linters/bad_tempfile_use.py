@@ -21,8 +21,4 @@ class BadTempfileUseLinter(bad_module_attribute_use.BadModuleAttributeUseLinter)
 
     @property
     def illegal_module_attributes(self):
-        return {
-            'tempfile': [
-                'mktemp',
-            ],
-        }
+        pass

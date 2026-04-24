@@ -20,6 +20,4 @@ class BadInputUseLinter(base.BaseLinter):
     def visit_ImportFrom(self, node):
         # Using input from six.moves is valid, so if input is imported
         # in a safe way, allow input to be used for the rest of the file
-        if (node.module == 'six.moves'
-                and any(alias.name == 'input' for alias in node.names)):
-            self.unsafe_input_import = False
+        pass

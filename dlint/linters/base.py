@@ -20,14 +20,7 @@ class BaseLinter(ast.NodeVisitor):
 
     def get_results(self):
 
-        return self.results
+        pass
 
     def visit(self, node):
-        if not self.namespace:
-            # In MultiNodeVisitor runs this will have already been set since
-            # the namespace remains the same for each linter. However, during
-            # testing or single-linter runs we still need to initialize the
-            # namespace for the linter.
-            self.namespace = namespace.Namespace.from_module_node(node)
-
-        super(BaseLinter, self).visit(node)
+        pass

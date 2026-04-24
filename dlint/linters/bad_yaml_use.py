@@ -15,11 +15,4 @@ class BadYAMLUseLinter(bad_module_attribute_use.BadModuleAttributeUseLinter):
 
     @property
     def illegal_module_attributes(self):
-        return {
-            'yaml': [
-                'dump',
-                'dump_all',
-                'load',
-                'load_all',
-            ],
-        }
+        pass

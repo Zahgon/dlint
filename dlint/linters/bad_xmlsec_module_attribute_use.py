@@ -14,18 +14,4 @@ class BadXmlsecModuleAttributeUseLinter(bad_module_attribute_use.BadModuleAttrib
 
     @property
     def illegal_module_attributes(self):
-        return {
-            'xmlsec.constants': [
-                'TransformDes3Cbc',
-                'TransformKWDes3',
-                'TransformDsaSha1',
-                'TransformEcdsaSha1',
-                'TransformRsaMd5',
-                'TransformRsaRipemd160',
-                'TransformRsaSha1',
-                'TransformRsaPkcs1',
-                'TransformMd5',
-                'TransformRipemd160',
-                'TransformSha1'
-            ],
-        }
+        pass

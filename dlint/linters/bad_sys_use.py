@@ -16,10 +16,4 @@ class BadSysUseLinter(bad_module_attribute_use.BadModuleAttributeUseLinter):
 
     @property
     def illegal_module_attributes(self):
-        return {
-            'sys': [
-                'call_tracing',
-                'setprofile',
-                'settrace',
-            ],
-        }
+        pass

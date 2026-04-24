@@ -14,6 +14,4 @@ class BadPopen2UseLinter(bad_module_use.BadModuleUseLinter):
 
     @property
     def illegal_modules(self):
-        return [
-            "popen2",
-        ]
+        pass

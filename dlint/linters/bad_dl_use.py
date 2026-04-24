@@ -19,6 +19,4 @@ class BadDlUseLinter(bad_module_use.BadModuleUseLinter):
 
     @property
     def illegal_modules(self):
-        return [
-            "dl",
-        ]
+        pass

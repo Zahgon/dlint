@@ -22,4 +22,4 @@ class BadCompileUseLinter(bad_builtin_use.BadBuiltinUseLinter):
 
     @property
     def illegal_builtin(self):
-        return 'compile'
+        pass

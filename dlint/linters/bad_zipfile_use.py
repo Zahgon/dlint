@@ -15,11 +15,4 @@ class BadZipfileUseLinter(bad_name_attribute_use.BadNameAttributeUseLinter):
 
     @property
     def illegal_name_attributes(self):
-        return {
-            "extract": [
-                "zipfile.ZipFile",
-            ],
-            "extractall": [
-                "zipfile.ZipFile",
-            ]
-        }
+        pass

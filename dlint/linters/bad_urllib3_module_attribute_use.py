@@ -14,8 +14,4 @@ class BadUrllib3ModuleAttributeUseLinter(bad_module_attribute_use.BadModuleAttri
 
     @property
     def illegal_module_attributes(self):
-        return {
-            'urllib3': [
-                'disable_warnings',
-            ],
-        }
+        pass

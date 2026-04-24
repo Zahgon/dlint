@@ -14,11 +14,4 @@ class BadOneLoginModuleAttributeUseLinter(bad_module_attribute_use.BadModuleAttr
 
     @property
     def illegal_module_attributes(self):
-        return {
-            'onelogin.saml2.utils.OneLogin_Saml2_Constants': [
-                'SHA1',
-                'RSA_SHA1',
-                'DSA_SHA1',
-                'TRIPLEDES_CBC',
-            ],
-        }
+        pass

@@ -15,4 +15,4 @@ class BadEvalUseLinter(bad_builtin_use.BadBuiltinUseLinter):
 
     @property
     def illegal_builtin(self):
-        return 'eval'
+        pass

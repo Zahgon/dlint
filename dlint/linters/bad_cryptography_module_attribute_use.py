@@ -14,20 +14,4 @@ class BadCryptographyModuleAttributeUseLinter(bad_module_attribute_use.BadModule
 
     @property
     def illegal_module_attributes(self):
-        return {
-            'cryptography.hazmat.primitives.hashes': [
-                'MD5',
-                'SHA1',
-            ],
-            'cryptography.hazmat.primitives.ciphers.modes': [
-                'ECB',
-            ],
-            'cryptography.hazmat.primitives.ciphers.algorithms': [
-                'Blowfish',
-                'ARC4',
-                'IDEA',
-            ],
-            'cryptography.hazmat.primitives.asymmetric.padding': [
-                'PKCS1v15',
-            ],
-        }
+        pass

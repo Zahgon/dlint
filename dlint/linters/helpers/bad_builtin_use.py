@@ -17,12 +17,4 @@ class BadBuiltinUseLinter(base.BaseLinter, abc.ABC):
         """
 
     def visit_Name(self, node):
-        if (node.id == self.illegal_builtin
-                and not self.namespace.name_imported(node.id)):
-            self.results.append(
-                base.Flake8Result(
-                    lineno=node.lineno,
-                    col_offset=node.col_offset,
-                    message=self._error_tmpl
-                )
-            )
+        pass

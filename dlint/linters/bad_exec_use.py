@@ -15,4 +15,4 @@ class BadExecUseLinter(bad_builtin_use.BadBuiltinUseLinter):
 
     @property
     def illegal_builtin(self):
-        return 'exec'
+        pass

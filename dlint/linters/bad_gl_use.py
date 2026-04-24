@@ -19,6 +19,4 @@ class BadGlUseLinter(bad_module_use.BadModuleUseLinter):
 
     @property
     def illegal_modules(self):
-        return [
-            "gl",
-        ]
+        pass

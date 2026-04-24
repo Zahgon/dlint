@@ -20,14 +20,4 @@ class BadOSUseLinter(bad_module_attribute_use.BadModuleAttributeUseLinter):
 
     @property
     def illegal_module_attributes(self):
-        return {
-            'os': [
-                'popen',
-                'popen2',
-                'popen3',
-                'popen4',
-                'system',
-                'tempnam',
-                'tmpnam',
-            ],
-        }
+        pass

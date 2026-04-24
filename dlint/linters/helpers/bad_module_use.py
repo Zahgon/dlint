@@ -32,51 +32,10 @@ class BadModuleUseLinter(base.BaseLinter, abc.ABC):
                 "parent_module_name.whitelisted_name1",
             ]
         """
-        return []
+        pass
 
     def visit_Import(self, node):
-        import_names = [
-            alias.name for alias in node.names
-            if alias.name not in self.whitelisted_modules
-        ]
-
-        bad_import = any(
-            tree.same_modules(illegal_module, name)
-            for illegal_module in self.illegal_modules
-            for name in import_names
-        )
-
-        if bad_import:
-            self.results.append(
-                base.Flake8Result(
-                    lineno=node.lineno,
-                    col_offset=node.col_offset,
-                    message=self._error_tmpl
-                )
-            )
+        pass
 
     def visit_ImportFrom(self, node):
-        if not node.module:
-            # Relative imports, e.g. 'from .' or 'from ..'
-            return
-
-        from_import_names = [
-            node.module + "." + alias.name
-            for alias in node.names
-            if node.module + "." + alias.name not in self.whitelisted_modules
-        ]
-
-        bad_from_import = any(
-            tree.same_modules(illegal_module, name)
-            for illegal_module in self.illegal_modules
-            for name in from_import_names
-        )
-
-        if bad_from_import:
-            self.results.append(
-                base.Flake8Result(
-                    lineno=node.lineno,
-                    col_offset=node.col_offset,
-                    message=self._error_tmpl
-                )
-            )
+        pass

@@ -22,15 +22,4 @@ class BadSSLModuleAttributeUseLinter(bad_module_attribute_use.BadModuleAttribute
 
     @property
     def illegal_module_attributes(self):
-        return {
-            'ssl': [
-                '_create_unverified_context',
-                '_https_verify_certificates',
-                'CERT_NONE',
-                'CERT_OPTIONAL',
-                'PROTOCOL_SSLv2',
-                'PROTOCOL_SSLv23',
-                'PROTOCOL_SSLv3',
-                'PROTOCOL_TLS',
-            ],
-        }
+        pass
